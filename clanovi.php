@@ -49,12 +49,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Upis novog člana</button>
+                <a href="#" <button type="button" class="btn btn-success btn-lg btn-block">Upis novog člana</button>
+                </a>
             </div>
         </div>
         <div class="row">
-        </br>
-    </div>
+            </br>
+        </div>
         <div class="row">
             <div class="col">
                 <?php
@@ -74,6 +75,8 @@
                             <th scope="col">Ime</th>
                             <th scope="col">Prezime</th>
                             <th scope="col">OIB</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
                             </tr>
                         </thead>';
                         while($record = mysqli_fetch_array($myData)){
@@ -81,26 +84,27 @@
                             echo "<td>" . $record['ime'] . "</td>";
                             echo "<td>" . $record['prezime'] . "</td>";
                             echo "<td>" . $record['oib'] . "</td>";
-                            /*
-                            echo "<td><a href=izbrisiZaposlenika.php?id=".$record['ID'].">Izbriši</a></td>";
-                            echo "<td><a href=azurirajZaposlenika.php?id=".$record['ID'].">Ažuriraj</a></td>";
+                            echo '<td> <a href="#" <button type="button" class="btn btn-info btn-sm btn-block" >Ažuriraj</button> </a> </td>';
+                            echo '<td> <a href="#" <button type="button" class="btn btn-danger btn-sm btn-block" href="#">Izbriši</button> </a> </td>';
                             echo "</tr>";
-                            */
                         }
                  ?>
             </div>
         </div>
-        <!--end izbornik-->
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-        </script>
+
+    </div>
+    <!--end izbornik-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
