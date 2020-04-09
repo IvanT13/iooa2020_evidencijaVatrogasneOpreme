@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Glavni izbornik</title>
+    <title>Popis članova</title>
 </head>
 
 <body>
@@ -52,6 +52,9 @@
                 <button type="button" class="btn btn-primary btn-lg btn-block">Upis novog člana</button>
             </div>
         </div>
+        <div class="row">
+        </br>
+    </div>
         <div class="row">
             <div class="col">
                 <?php
