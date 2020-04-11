@@ -62,15 +62,16 @@
             <div class="col">
                 <?php
 				
-                    $con=mysqli_connect("127.0.0.1","root","");
+                    $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
                     
                     if(!$con){
                         die("Nesupjelo spajanje: " . mysqli_error());}
                     
-                    mysqli_select_db($con,"iooa2020");
-                    $sql = "SELECT * FROM clanovi";
-                    $myData = mysqli_query($con,$sql);
+                    mysqli_select_db($con,"iooa2020"); //spajanje na bazu
+                    $sql = "SELECT * FROM clanovi"; //sql upit za ispis
+                    $myData = mysqli_query($con,$sql); //pull podataka iz baze
                     
+                    //ispis podataka
                     echo '<table class="table">
                         <thead>
                             <tr>
