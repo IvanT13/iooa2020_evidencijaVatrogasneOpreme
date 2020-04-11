@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-<meta charset="UTF-8">
 
 <head>
   <!-- Required meta tags -->
@@ -45,25 +44,25 @@
   <!--end navbar-->
   <!--izbornik-->
   <div class="container-fluid">
-    <form action="kreiraj_clan.php" method="POST">
+    <form method="POST" action="kreiraj_clan.php" >
       <!--ime-->
       <div class="form-group">
         <label for="ime">Ime:</label>
-        <input type="text" class="form-control" id="ime" aria-describedby="imeHelp" required>
+        <input type="text" class="form-control" id="ime" name="ime" aria-describedby="imeHelp" required>
         <small id="imeHelp" class="form-text text-muted">Unesi ime člana</small>
       </div>
       <!--end ime-->
       <!--prezime-->
       <div class="form-group">
         <label for="prezime">Prezime:</label>
-        <input type="text" class="form-control" id="prezime" aria-describedby="prezimeHelp" required>
+        <input type="text" class="form-control" id="prezime" name="prezime" aria-describedby="prezimeHelp" required>
         <small id="prezimeHelp" class="form-text text-muted">Unesi prezime člana</small>
       </div>
       <!--end prezime-->
       <!--oib-->
       <div class="form-group">
         <label for="oib">OIB:</label>
-        <input type="number" class="form-control" id="oib" aria-describedby="oibHelp" required>
+        <input type="number" class="form-control" id="oib" name="oib" aria-describedby="oibHelp" required>
         <small id="oibHelp" class="form-text text-muted">Unesi OIB člana</small>
       </div>
       <!--end oib-->
