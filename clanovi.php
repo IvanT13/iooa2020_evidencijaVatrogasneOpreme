@@ -45,7 +45,7 @@
     <div class="row">
         </br>
     </div>
-    <!--izbornik-->
+    <!-- Novi član button -->
     <div class="container-fluid">
         <div class="row">
             <div class="col">
@@ -53,9 +53,11 @@
                 </a>
             </div>
         </div>
+    <!-- end Novi član button -->
         <div class="row">
             </br>
         </div>
+    <!-- Ispis članova -->
         <div class="row">
             <div class="col">
                 <?php
@@ -93,7 +95,7 @@
         </div>
 
     </div>
-    <!--end izbornik-->
+    <!--end Ispis članova-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
