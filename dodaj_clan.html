@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+<meta charset="UTF-8">
 
 <head>
   <!-- Required meta tags -->
@@ -44,7 +45,7 @@
   <!--end navbar-->
   <!--izbornik-->
   <div class="container-fluid">
-    <form>
+    <form action="kreiraj_clan.php" method="POST">
       <!--ime-->
       <div class="form-group">
         <label for="ime">Ime:</label>
@@ -62,14 +63,14 @@
       <!--oib-->
       <div class="form-group">
         <label for="oib">OIB:</label>
-        <input type="number" class="form-control" id="oib" aria-describedby="oibHelp" maxlength="11" minlength="11" required>
+        <input type="number" class="form-control" id="oib" aria-describedby="oibHelp" required>
         <small id="oibHelp" class="form-text text-muted">Unesi OIB člana</small>
       </div>
       <!--end oib-->
       <button type="submit" class="btn btn-success btn-block">Unesi novog člana</button>
     </form>
   </div>
-    <!--end izbornik-->
+  <!--end izbornik-->
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
