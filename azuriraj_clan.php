@@ -45,9 +45,47 @@
   <div class="row">
     </br>
   </div>
-  <!--izbornik-->
-  
-  <!--end izbornik-->
+  <!--Ažuriranje-->
+  <?php
+    $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
+                    
+    if(!$con){
+        die("Nesupjelo spajanje: " . mysqli_error());}
+    
+    mysqli_select_db($con,"iooa2020"); //spajanje na bazu
+    $sql = "SELECT * FROM clanovi WHERE ID='$_GET[id]'"; //sql upit za ispis
+    $myData = mysqli_query($con,$sql); //pull podataka iz baze
+    $record = mysqli_fetch_array($myData);
+	$id = $record['ID'];
+    
+    echo  "<div class='container-fluid'>
+    <form method='POST' action='azuriraj_clan_back.php?id=$id'>
+      <!--ime-->
+      <div class='form-group'>
+        <label for='ime'>Ime:</label>
+        <input type='text' class='form-control' id='ime' name='ime' aria-describedby='imeHelp' value='$record[ime]' required>
+        <small id='imeHelp' class='form-text text-muted'>Unesi ime člana</small>
+      </div>
+      <!--end ime-->
+      <!--prezime-->
+      <div class='form-group'>
+        <label for='prezime'>Prezime:</label>
+        <input type='text' class='form-control' id='prezime' name='prezime' aria-describedby='prezimeHelp' value='$record[prezime]' required>
+        <small id='prezimeHelp' class='form-text text-muted'>Unesi prezime člana</small>
+      </div>
+      <!--end prezime-->
+      <!--oib-->
+      <div class='form-group'>
+        <label for='oib'>OIB:</label>
+        <input type='number' class='form-control' id='oib' name='oib' aria-describedby='oibHelp' value='$record[oib]' required>
+        <small id='oibHelp' class='form-text text-muted'>Unesi OIB člana</small>
+      </div>
+      <!--end oib-->
+      <button type='submit' class='btn btn-success btn-block'>Ažuriraj člana</button>
+    </form>
+  </div>";
+  ?>
+  <!--end Ažuriranje-->
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
