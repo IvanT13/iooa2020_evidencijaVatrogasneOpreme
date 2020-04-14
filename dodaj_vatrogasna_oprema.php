@@ -44,7 +44,7 @@
   <!--end navbar-->
   <!--izbornik-->
   <div class="container-fluid">
-    <form method="POST" action="kreiraj_clan.php">
+    <form method="POST" action="kreiraj_vatrogasna_oprema.php">
       <!--naziv opreme-->
       <div class="form-group">
         <label for="naziv_opreme">Naziv opreme:</label>
@@ -55,7 +55,7 @@
       <!--Kolicina opreme-->
       <div class="form-group">
         <label for="kolicina">Količina:</label>
-        <input type="text" class="form-control" id="kolicina" name="kolicina" aria-describedby="kolicinaHelp" required>
+        <input type="number" class="form-control" id="kolicina" name="kolicina" aria-describedby="kolicinaHelp" required>
         <small id="kolicinaHelp" class="form-text text-muted">Unesi količinu opreme</small>
       </div>
       <!--end Kolicina opreme-->
