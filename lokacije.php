@@ -42,9 +42,57 @@
     </div>
   </nav>
   <!--end navbar-->
-  <!--izbornik-->
-  
-  <!--end izbornik-->
+  <div class="row">
+        </br>
+    </div>
+  <!-- Nova lokacija button -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <a href="#" <button type="button" class="btn btn-success btn-lg btn-block">Upis nove lokacije</button>
+        </a>
+      </div>
+    </div>
+    <!-- end Nova lokacija button -->
+    <div class="row">
+      </br>
+    </div>
+    <!-- Ispis lokacija -->
+    <div class="row">
+      <div class="col">
+        <?php
+
+          $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
+          
+          if(!$con){
+              die("Nesupjelo spajanje: " . mysqli_error());}
+          
+          mysqli_select_db($con,"iooa2020"); //spajanje na bazu
+          $sql = "SELECT * FROM lokacije"; //sql upit za ispis
+          $myData = mysqli_query($con,$sql); //pull podataka iz baze
+          
+          //ispis podataka
+          echo '<table class="table">
+              <thead>
+                  <tr>
+                  <th scope="col">Lokacija</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                  </tr>
+              </thead>';
+              while($record = mysqli_fetch_array($myData)){
+                  echo "<tr>";
+                  echo "<td>" . $record['naziv_lokacije'] . "</td>";
+                  echo '<td> <a href="#" <button type="button" class="btn btn-info btn-sm btn-block" >Ažuriraj</button> </a> </td>';
+                  echo '<td> <a href="#" <button type="button" class="btn btn-danger btn-sm btn-block" href="#">Izbriši</button> </a> </td>';
+                  echo "</tr>";
+              }
+        ?>
+      </div>
+    </div>
+
+  </div>
+  <!--end Ispis lokacija-->
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
