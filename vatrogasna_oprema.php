@@ -69,12 +69,7 @@
           
           mysqli_select_db($con,"iooa2020"); //spajanje na bazu
           $sql = "SELECT vatrogasna_oprema.naziv_opreme, vatrogasna_oprema.kolicina, lokacije.naziv_lokacije AS lolokacija FROM vatrogasna_oprema, lokacije WHERE vatrogasna_oprema.lokacija = lokacije.ID"; //sql upit za ispis opreme
-          $myData = mysqli_query($con,$sql); //pull podataka iz baze opreme
-          
-          /*
-          $sqlLokacija = "SELECT * FROM lokacije"; //sql uput za ispis lokacija
-          $myDataLokacija = mysqli_query($con,$sqlLokacija); //pull podataka iz baze lokacija
-         */
+          $myData = mysqli_query($con,$sql); //pull podataka iz baze oprema
           //ispis podataka
           echo '<table class="table">
               <thead>
@@ -87,13 +82,10 @@
                   </tr>
               </thead>';
               while($record = mysqli_fetch_array($myData)){
-                 // $recordLokacija = mysqli_fetch_array($myDataLokacija);
-                  //print_r($recordLokacija);
                   echo "<tr>";
                   echo "<td>" . $record['naziv_opreme'] . "</td>";
                   echo "<td>" . $record['kolicina'] . "</td>";
                   echo "<td>" . $record['lolokacija'] . "</td>";
-                 // echo "<td>" . $recordLokacija['naziv_lokacije'] . "</td>";
                   echo '<td> <a href="#" <button type="button" class="btn btn-info btn-sm btn-block" >Ažuriraj</button> </a> </td>';
                   echo '<td> <a href="#" <button type="button" class="btn btn-danger btn-sm btn-block" href="#">Izbriši</button> </a> </td>';
                   echo "</tr>";
