@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <title>Glavni izbornik</title>
+  <title>Zaštitna oprema</title>
 </head>
 
 <body>
@@ -23,10 +23,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="#">Glavni izbornik <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="#">Zaštitna oprema</a>
         </li>
         <li class="nav-item">
@@ -42,9 +42,61 @@
     </div>
   </nav>
   <!--end navbar-->
-  <!--izbornik-->
-  
-  <!--end izbornik-->
+  <div class="row">
+    </br>
+  </div>
+  <!-- Nova zaštitna oprema button -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <a href="#" <button type="button" class="btn btn-success btn-lg btn-block">Upis nove zaštitne opreme</button>
+        </a>
+      </div>
+    </div>
+    <!-- end Nova zaštitna oprema button -->
+    <div class="row">
+      </br>
+    </div>
+    <!-- Ispis zaštitne opreme -->
+    <div class="row">
+      <div class="col">
+        <?php
+
+          $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
+          
+          if(!$con){
+              die("Nesupjelo spajanje: " . mysqli_error());}
+          
+          mysqli_select_db($con,"iooa2020"); //spajanje na bazu
+          $sql = "SELECT zastitna_oprema.naziv_opreme, zastitna_oprema.kolicina, clanovi.ime AS clanime, clanovi.prezime AS clanprez FROM zastitna_oprema, clanovi WHERE zastitna_oprema.clan = clanovi.ID"; //sql upit za ispis opreme
+          $myData = mysqli_query($con,$sql); //pull podataka iz baze opreme
+          //ispis podataka
+          echo '<table class="table">
+              <thead>
+                  <tr>
+                  <th scope="col">Naziv opreme</th>
+                  <th scope="col">Količina</th>
+                  <th scope="col">Član</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                  </tr>
+              </thead>';
+              while($record = mysqli_fetch_array($myData)){
+                  echo "<tr>";
+                  echo "<td>" . $record['naziv_opreme'] . "</td>";
+                  echo "<td>" . $record['kolicina'] . "</td>";
+                  echo "<td>" . $record['clanime'] . " " . $record['clanprez'] . "</td>";
+                  echo '<td> <a href="#" <button type="button" class="btn btn-info btn-sm btn-block" >Ažuriraj</button> </a> </td>';
+                  echo '<td> <a href="#" <button type="button" class="btn btn-danger btn-sm btn-block" href="#">Izbriši</button> </a> </td>';
+                  echo "</tr>";
+              }
+        ?>
+      </div>
+    </div>
+
+  </div>
+  <!--end Ispis zaštitne opreme-->
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
