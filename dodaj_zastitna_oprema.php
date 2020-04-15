@@ -78,7 +78,6 @@
                 while($record = mysqli_fetch_array($myData)){
                     echo "<option>" . $record['ime'] . " " . $record['prezime'] . "</option>";
                 }
-                
             ?>
         </select>
         <small id="clanHelp" class="form-text text-muted">Dodijeli opremu članu</small>
