@@ -42,6 +42,9 @@
     </div>
   </nav>
   <!--end navbar-->
+  <div class="row">
+    </br>
+  </div>
   <!--izbornik-->
   <div class="container-fluid">
     <form method="POST" action="kreiraj_vatrogasna_oprema.php">
