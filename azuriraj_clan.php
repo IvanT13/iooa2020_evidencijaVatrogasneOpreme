@@ -16,27 +16,27 @@
 <body>
   <!--navbar-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Evidencija DVD</a>
+    <a class="navbar-brand" href="index.html">Evidencija DVD</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+    <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Glavni izbornik <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="zastitna_oprema.php">Zaštitna oprema</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Zaštitna oprema</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Vatrogasna oprema</a>
+          <a class="nav-link" href="vatrogasna_oprema.php">Vatrogasna oprema</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Članovi</a>
+          <a class="nav-link" href="clanovi.php">Članovi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Lokacije opreme</a>
+          <a class="nav-link" href="lokacije.php">Lokacije opreme</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pomoc.html">Pomoć</a>
         </li>
       </ul>
     </div>

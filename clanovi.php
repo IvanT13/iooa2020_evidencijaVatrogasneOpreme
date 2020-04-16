@@ -16,7 +16,7 @@
 <body>
     <!--navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Evidencija DVD</a>
+        <a class="navbar-brand" href="index.html">Evidencija DVD</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,19 +24,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Glavni izbornik <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="zastitna_oprema.php">Zaštitna oprema</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Zaštitna oprema</a>
+                    <a class="nav-link" href="vatrogasna_oprema.php">Vatrogasna oprema</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="clanovi.php">Članovi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Vatrogasna oprema</a>
+                    <a class="nav-link" href="lokacije.php">Lokacije opreme</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Članovi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Lokacije opreme</a>
+                    <a class="nav-link" href="pomoc.html">Pomoć</a>
                 </li>
             </ul>
         </div>
@@ -49,15 +49,16 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <a href="#" <button type="button" class="btn btn-success btn-lg btn-block">Upis novog člana</button>
+                <a href="dodaj_clan.html" <button type="button" class="btn btn-success btn-lg btn-block">Upis novog
+                    člana</button>
                 </a>
             </div>
         </div>
-    <!-- end Novi član button -->
+        <!-- end Novi član button -->
         <div class="row">
             </br>
         </div>
-    <!-- Ispis članova -->
+        <!-- Ispis članova -->
         <div class="row">
             <div class="col">
                 <?php
@@ -87,8 +88,8 @@
                             echo "<td>" . $record['ime'] . "</td>";
                             echo "<td>" . $record['prezime'] . "</td>";
                             echo "<td>" . $record['oib'] . "</td>";
-                            echo '<td> <a href="#" <button type="button" class="btn btn-info btn-sm btn-block" >Ažuriraj</button> </a> </td>';
-                            echo '<td> <a href="#" <button type="button" class="btn btn-danger btn-sm btn-block" href="#">Izbriši</button> </a> </td>';
+                            echo "<td><a href=azuriraj_clan.php?id=".$record['ID']." <button type='button' class='btn btn-info btn-sm btn-block'>Ažuriraj</button></a></td>";
+                            echo "<td><a onClick=brisanje(".$record['ID'].") <button type='button' class='btn btn-danger btn-sm btn-block'>Izbriši</button></a></td>";
                             echo "</tr>";
                         }
                  ?>
@@ -98,6 +99,16 @@
     </div>
     <!--end Ispis članova-->
     <!-- Optional JavaScript -->
+    <!-- Potvrda brisanja -->
+    <script>
+        function brisanje(id) {
+            var odgovor = false;
+            odgovor = confirm("Jesi li siguran?");
+            if (odgovor) {
+                window.open("izbrisi_clan.php?id=" + id, "_parent");
+            }
+        }
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
