@@ -22,7 +22,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+      <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="index.html">Glavni izbornik</a>
         </li>
@@ -52,7 +52,8 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-        <a href="dodaj_zastitna_oprema.php" <button type="button" class="btn btn-success btn-lg btn-block">Upis nove zaštitne opreme</button>
+        <a href="dodaj_zastitna_oprema.php" <button type="button" class="btn btn-success btn-lg btn-block">Upis nove
+          zaštitne opreme</button>
         </a>
       </div>
     </div>
@@ -103,13 +104,13 @@
   <!-- Optional JavaScript -->
   <!-- Potvrda brisanja -->
   <script>
-      function brisanje(id){
-        var odgovor = false;
-        odgovor = confirm("Jesi li siguran?");
-        if(odgovor){
-          window.open("izbrisi_zastitna_oprema.php?id="+id, "_parent");
-        }
+    function brisanje(id) {
+      var odgovor = false;
+      odgovor = confirm("Jesi li siguran?");
+      if (odgovor) {
+        window.open("izbrisi_zastitna_oprema.php?id=" + id, "_parent");
       }
+    }
   </script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
