@@ -24,19 +24,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Glavni izbornik <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Glavni izbornik</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Zaštitna oprema</a>
+                    <a class="nav-link" href="zastitna_oprema.php">Zaštitna oprema</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Vatrogasna oprema</a>
+                    <a class="nav-link" href="vatrogasna_oprema.php">Vatrogasna oprema</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Članovi</a>
+                    <a class="nav-link" href="clanovi.php">Članovi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Lokacije opreme</a>
+                    <a class="nav-link" href="lokacije.php">Lokacije opreme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pomoc.html">Pomoć</a>
                 </li>
             </ul>
         </div>

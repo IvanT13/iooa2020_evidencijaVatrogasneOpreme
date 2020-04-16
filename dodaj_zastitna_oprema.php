@@ -24,19 +24,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Glavni izbornik <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.html">Glavni izbornik</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="zastitna_oprema.php">Zaštitna oprema</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Zaštitna oprema</a>
+          <a class="nav-link" href="vatrogasna_oprema.php">Vatrogasna oprema</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Vatrogasna oprema</a>
+          <a class="nav-link" href="clanovi.php">Članovi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Članovi</a>
+          <a class="nav-link" href="lokacije.php">Lokacije opreme</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Lokacije opreme</a>
+          <a class="nav-link" href="pomoc.html">Pomoć</a>
         </li>
       </ul>
     </div>
@@ -51,14 +54,16 @@
       <!--naziv opreme-->
       <div class="form-group">
         <label for="naziv_opreme">Naziv opreme:</label>
-        <input type="text" class="form-control" id="naziv_opreme" name="naziv_opreme" aria-describedby="naziv_opremeHelp" required>
+        <input type="text" class="form-control" id="naziv_opreme" name="naziv_opreme"
+          aria-describedby="naziv_opremeHelp" required>
         <small id="naziv_opremeHelp" class="form-text text-muted">Unesi naziv opreme</small>
       </div>
       <!--end naziv opreme-->
       <!--Kolicina opreme-->
       <div class="form-group">
         <label for="kolicina">Količina:</label>
-        <input type="number" class="form-control" id="kolicina" name="kolicina" aria-describedby="kolicinaHelp" required>
+        <input type="number" class="form-control" id="kolicina" name="kolicina" aria-describedby="kolicinaHelp"
+          required>
         <small id="kolicinaHelp" class="form-text text-muted">Unesi količinu opreme</small>
       </div>
       <!--end Kolicina opreme-->
@@ -66,7 +71,7 @@
       <div class="form-group">
         <label for="clan">Član:</label>
         <select type="text" class="form-control" id="clan" name="clan" aria-describedby="clanHelp" required>
-            <?php
+          <?php
                 $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
           
                 if(!$con){
