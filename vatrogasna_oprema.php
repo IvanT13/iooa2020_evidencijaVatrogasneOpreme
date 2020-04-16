@@ -24,19 +24,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Glavni izbornik <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.html">Glavni izbornik</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Zaštitna oprema</a>
+          <a class="nav-link" href="zastitna_oprema.php">Zaštitna oprema</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Vatrogasna oprema</a>
+          <a class="nav-link" href="vatrogasna_oprema.php">Vatrogasna oprema</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Članovi</a>
+          <a class="nav-link" href="clanovi.php">Članovi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Lokacije opreme</a>
+          <a class="nav-link" href="lokacije.php">Lokacije opreme</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pomoc.html">Pomoć</a>
         </li>
       </ul>
     </div>
@@ -49,7 +52,8 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-        <a href="#" <button type="button" class="btn btn-success btn-lg btn-block">Upis nove vatrogasne opreme</button>
+        <a href="dodaj_vatrogasna_oprema.php" <button type="button" class="btn btn-success btn-lg btn-block">Upis nove
+          vatrogasne opreme</button>
         </a>
       </div>
     </div>
@@ -68,7 +72,7 @@
               die("Nesupjelo spajanje: " . mysqli_error());}
           
           mysqli_select_db($con,"iooa2020"); //spajanje na bazu
-          $sql = "SELECT vatrogasna_oprema.naziv_opreme, vatrogasna_oprema.kolicina, lokacije.naziv_lokacije AS lolokacija FROM vatrogasna_oprema, lokacije WHERE vatrogasna_oprema.lokacija = lokacije.ID"; //sql upit za ispis opreme
+          $sql = "SELECT vatrogasna_oprema.ID, vatrogasna_oprema.naziv_opreme, vatrogasna_oprema.kolicina, lokacije.naziv_lokacije AS lolokacija FROM vatrogasna_oprema, lokacije WHERE vatrogasna_oprema.lokacija = lokacije.ID"; //sql upit za ispis opreme
           $myData = mysqli_query($con,$sql); //pull podataka iz baze oprema
           //ispis podataka
           echo '<table class="table">
@@ -86,8 +90,8 @@
                   echo "<td>" . $record['naziv_opreme'] . "</td>";
                   echo "<td>" . $record['kolicina'] . "</td>";
                   echo "<td>" . $record['lolokacija'] . "</td>";
-                  echo '<td> <a href="#" <button type="button" class="btn btn-info btn-sm btn-block" >Ažuriraj</button> </a> </td>';
-                  echo '<td> <a href="#" <button type="button" class="btn btn-danger btn-sm btn-block" href="#">Izbriši</button> </a> </td>';
+                  echo "<td><a href=azuriraj_vatrogasna_oprema.php?id=".$record['ID']." <button type='button' class='btn btn-info btn-sm btn-block'>Ažuriraj</button></a></td>";
+                  echo "<td><a onClick=brisanje(".$record['ID'].") <button type='button' class='btn btn-danger btn-sm btn-block'>Izbriši</button></a></td>";
                   echo "</tr>";
               }
         ?>
@@ -98,6 +102,16 @@
   <!--end Ispis vatrogasne opreme-->
 
   <!-- Optional JavaScript -->
+  <!-- Potvrda brisanja -->
+  <script>
+    function brisanje(id) {
+      var odgovor = false;
+      odgovor = confirm("Jesi li siguran?");
+      if (odgovor) {
+        window.open("izbrisi_vatrogasna_oprema.php?id=" + id, "_parent");
+      }
+    }
+  </script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
