@@ -3,7 +3,7 @@
 
 <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
@@ -62,13 +62,13 @@
     <div class="row">
       <div class="col">
         <?php
-
-          $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
+   
+          $con=mysqli_connect("dvdbribir.hr","dvdbribir_ivan","K0mpl1c1r4naL0z!nka"); //spajanje na server
           
           if(!$con){
               die("Nesupjelo spajanje: " . mysqli_error());}
           
-          mysqli_select_db($con,"iooa2020"); //spajanje na bazu
+          mysqli_select_db($con,"dvdbribir_iooa2020"); //spajanje na bazu
           $sql = "SELECT * FROM lokacije"; //sql upit za ispis
           $myData = mysqli_query($con,$sql); //pull podataka iz baze
           
