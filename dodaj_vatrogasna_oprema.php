@@ -69,12 +69,12 @@
         <label for="lokacija">Lokacija:</label>
         <select type="text" class="form-control" id="lokacija" name="lokacija" aria-describedby="lokacijaHelp" required>
           <?php
-                $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
+                $con=mysqli_connect("dvdbribir.hr","dvdbribir_ivan","K0mpl1c1r4naL0z!nka"); //spajanje na server
           
                 if(!$con){
                     die("Nesupjelo spajanje: " . mysqli_error());}
                 
-                mysqli_select_db($con,"iooa2020"); //spajanje na bazu
+                mysqli_select_db($con,"dvdbribir_iooa2020"); //spajanje na bazu
                 $sql = "SELECT * FROM lokacije"; //sql upit za ispis
                 $myData = mysqli_query($con,$sql); //pull podataka iz baze
                 while($record = mysqli_fetch_array($myData)){

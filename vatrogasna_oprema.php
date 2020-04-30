@@ -63,12 +63,12 @@
       <div class="col">
         <?php
 
-          $con=mysqli_connect("127.0.0.1","root",""); //spajanje na server
+          $con=mysqli_connect("dvdbribir.hr","dvdbribir_ivan","K0mpl1c1r4naL0z!nka"); //spajanje na server
           
           if(!$con){
               die("Nesupjelo spajanje: " . mysqli_error());}
           
-          mysqli_select_db($con,"iooa2020"); //spajanje na bazu
+          mysqli_select_db($con,"dvdbribir_iooa2020"); //spajanje na bazu
           $sql = "SELECT vatrogasna_oprema.ID, vatrogasna_oprema.naziv_opreme, vatrogasna_oprema.kolicina, lokacije.naziv_lokacije AS lolokacija FROM vatrogasna_oprema, lokacije WHERE vatrogasna_oprema.lokacija = lokacije.ID"; //sql upit za ispis opreme
           $myData = mysqli_query($con,$sql); //pull podataka iz baze oprema
           //ispis podataka
