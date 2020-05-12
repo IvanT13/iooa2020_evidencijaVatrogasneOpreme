@@ -63,12 +63,7 @@
       <div class="col">
         <?php
 
-          $con=mysqli_connect("dvdbribir.hr","dvdbribir_ivan","K0mpl1c1r4naL0z!nka"); //spajanje na server
-          
-          if(!$con){
-              die("Nesupjelo spajanje: " . mysqli_error());}
-          
-          mysqli_select_db($con,"dvdbribir_iooa2020"); //spajanje na bazu
+          require ('connection.php');
           $sql = "SELECT zastitna_oprema.ID, zastitna_oprema.naziv_opreme, zastitna_oprema.kolicina, clanovi.ime AS clanime, clanovi.prezime AS clanprez FROM zastitna_oprema, clanovi WHERE zastitna_oprema.clan = clanovi.ID"; //sql upit za ispis opreme
           $myData = mysqli_query($con,$sql); //pull podataka iz baze opreme
           //ispis podataka
