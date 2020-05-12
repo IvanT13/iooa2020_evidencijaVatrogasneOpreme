@@ -58,6 +58,37 @@
     <div class="row">
       </br>
     </div>
+    <!-- Filtriranje prema članu -->
+    <div class="row">
+        <div class="col">
+          <form class="form-inline" method="POST" action="vatrogasna_oprema_filter.php">
+            <div class="form-inline">
+              <label for="clan">Prikaži opremu po lokaciji: </label>
+              <div class="col">
+                <select type="text" class="form-control" id="lokacija" name="lokacija" aria-describedby="lokacijaHelp" required>
+                  <?php
+                require ('connection.php');
+                $sql = "SELECT * FROM lokacije"; //sql upit za ispis
+                $myData = mysqli_query($con,$sql); //pull podataka iz baze
+                while($record = mysqli_fetch_array($myData)){
+                  echo "<option>" . $record['naziv_lokacije'] . "</option>";
+                }
+              ?>
+                </select>
+                </div>
+            </div>
+            <div class="col">
+            <div class="form-inline">
+            <button type="submit" class="btn btn-secondary btn-block">Prikaži</button>
+            </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    <!-- end filtriranje prema članu -->
+    <div class="row">
+      </br>
+    </div>
     <!-- Ispis vatrogasne opreme -->
     <div class="row">
       <div class="col">
