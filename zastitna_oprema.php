@@ -64,7 +64,7 @@
         <?php
 
           require ('connection.php');
-          $sql = "SELECT zastitna_oprema.ID, zastitna_oprema.naziv_opreme, zastitna_oprema.kolicina, clanovi.ime AS clanime, clanovi.prezime AS clanprez FROM zastitna_oprema, clanovi WHERE zastitna_oprema.clan = clanovi.ID"; //sql upit za ispis opreme
+          $sql = "SELECT zastitna_oprema.ID, zastitna_oprema.naziv_opreme, zastitna_oprema.kolicina, zastitna_oprema.datum_zaduzeno, clanovi.ime AS clanime, clanovi.prezime AS clanprez FROM zastitna_oprema, clanovi WHERE zastitna_oprema.clan = clanovi.ID"; //sql upit za ispis opreme
           $myData = mysqli_query($con,$sql); //pull podataka iz baze opreme
           //ispis podataka
           echo '<table class="table">
@@ -73,6 +73,7 @@
                   <th scope="col">Naziv opreme</th>
                   <th scope="col">Količina</th>
                   <th scope="col">Član</th>
+                  <th scope="col">Datum zaduženja</th>
                   <th scope="col"></th>
                   <th scope="col"></th>
                   </tr>
@@ -82,6 +83,7 @@
                   echo "<td>" . $record['naziv_opreme'] . "</td>";
                   echo "<td>" . $record['kolicina'] . "</td>";
                   echo "<td>" . $record['clanime'] . " " . $record['clanprez'] . "</td>";
+                  echo "<td>" . $record['datum_zaduzeno'] . "</td>";
                   echo "<td><a href=azuriraj_zastitna_oprema.php?id=".$record['ID']." <button type='button' class='btn btn-info btn-sm btn-block'>Ažuriraj</button></a></td>";
                   echo "<td><a onClick=brisanje(".$record['ID'].") <button type='button' class='btn btn-danger btn-sm btn-block'>Izbriši</button></a></td>";
                   echo "</tr>";

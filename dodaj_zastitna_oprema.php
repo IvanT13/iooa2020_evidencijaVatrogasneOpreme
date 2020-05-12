@@ -80,6 +80,14 @@
         <small id="clanHelp" class="form-text text-muted">Dodijeli opremu članu</small>
       </div>
       <!--end Član-->
+      <!--Datum zaduženja-->
+      <div class="form-group">
+        <label for="datum_zaduzeno">Količina:</label>
+        <input type="date" class="form-control" id="datum_zaduzeno" name="datum_zaduzeno" aria-describedby="datum_zaduzenoHelp"
+          required>
+        <small id="datum_zaduzenoHelp" class="form-text text-muted">Odaberi datum kada je oprema zadužena</small>
+      </div>
+      <!--end Datum zaduženja-->
       <button type="submit" class="btn btn-success btn-block">Unesi opremu</button>
     </form>
   </div>
