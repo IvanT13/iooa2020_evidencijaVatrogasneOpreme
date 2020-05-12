@@ -79,12 +79,16 @@
       echo "</select>
       <small id='clanHelp' class='form-text text-muted'>Dodijeli opremu članu</small>
     </div>
-    <!--end Clan-->
+    <!--end Clan-->";
+    echo "<div class='form-group'>
+        <label for='datum_zaduzeno'>Količina:</label>
+        <input type='date' class='form-control' id='datum_zaduzeno' name='datum_zaduzeno' aria-describedby='datum_zaduzenoHelp'
+        value='$record[datum_zaduzeno]' required>
+        <small id='datum_zaduzenoHelp' class='form-text text-muted'>Odaberi datum kada je oprema zadužena</small>
+      </div>
     <button type='submit' class='btn btn-success btn-block'>Ažuriraj opremu</button>
     </form>
   </div>";
-
-
   ?>
 
     <!-- Optional JavaScript -->
