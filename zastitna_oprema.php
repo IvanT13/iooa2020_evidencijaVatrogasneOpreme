@@ -58,6 +58,37 @@
     <div class="row">
       </br>
     </div>
+    <!-- Filtriranje prema članu -->
+      <div class="row">
+        <div class="col">
+          <form class="form-inline" method="POST" action="zastitna_oprema_filter.php">
+            <div class="form-inline">
+              <label for="clan">Prikaži opremu po članu: </label>
+              <div class="col">
+                <select type="text" class="form-control" id="clan" name="clan" aria-describedby="clanHelp" required>
+                  <?php
+                require ('connection.php');
+                $sql = "SELECT * FROM clanovi"; //sql upit za ispis
+                $myData = mysqli_query($con,$sql); //pull podataka iz baze
+                while($record = mysqli_fetch_array($myData)){
+                    echo "<option>" . $record['ime'] . " " . $record['prezime'] . "</option>";
+                }
+              ?>
+                </select>
+                </div>
+            </div>
+            <div class="col">
+            <div class="form-inline">
+            <button type="submit" class="btn btn-secondary btn-block">Prikaži</button>
+            </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    <!-- end filtriranje prema članu -->
+    <div class="row">
+      </br>
+    </div>
     <!-- Ispis zaštitne opreme -->
     <div class="row">
       <div class="col">
