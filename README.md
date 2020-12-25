@@ -6,5 +6,3 @@ U produkcijskoj verziji aplikacije, server je na zakupljenom webhostingu (cPanel
 Bootstrap framework je linkan u aplikaciju kroz Bootstrap CDN.
 
 Sav programski kod je pisan u Visual Studio Code editoru
-
-Poveznica na aplikaciju: http://dvdbribir.hr/evidencija/
